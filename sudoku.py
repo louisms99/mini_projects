@@ -65,7 +65,7 @@ class Sudoku():
     
     def solver(self):
         ''' solves puzzle '''
-
+        
         
         for y in range(9):
             for x in range(9):
@@ -76,28 +76,12 @@ class Sudoku():
                             self.solver()
                             self.puzzle[y][x] = 0
                     return
+        grid = self.puzzle
         print(np.matrix(grid))
-        input('More solutions?')
+        raise KeyboardInterrupt
  
     
-            
-class EasyGrid:
-    
-    def __init__(self):
-        
-        self.puzzle = np.zeros((9,9))
-    
-    def display(self):
-        return self.puzzle
-    
-    def generate(self):
-        
-        for i in range(9):
-            k = np.random.randint(low=1,high=9)
-            self.puzzle[i][i] = k
-        
-        print(self.puzzle)
-        return self.puzzle
+
         
         
     
@@ -120,7 +104,7 @@ if __name__ == '__main__':
     
     
     #Sudoku(grid).__repr__()
-    Sudoku(grid).solver()
+    grid = Sudoku(grid).solver()
 
 
     
@@ -138,8 +122,5 @@ if __name__ == '__main__':
 #    solver(grid)
     
 
-
-
-                    
 
 
